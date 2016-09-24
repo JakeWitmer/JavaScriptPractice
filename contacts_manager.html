@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>
+		Contact Manager
+	</title>
+
+	<style>
+		.input-group {
+			margin-top: 7px;
+			margin-left: 7px;
+		}
+		#submit-create-contact {
+			background-color: #EEEE44;
+		}
+	</style>
+
+	<script>
+
+
+
+		function createContact() {
+			var firstName = document.getElementById('first-name').value;
+			console.log("firstName: ", firstName); // REMOVE THIS ========
+		
+			var middleName = document.getElementById('middle-name').value;
+			console.log("middleName: ", middleName);
+
+			var lastName = document.getElementById('last-name').value;
+			console.log("lastName: ", lastName);
+
+			var streetNumber = document.getElementById('street-number').value;
+			console.log("streetNumber: ", streetNumber);
+
+			var streetName = document.getElementById('street-name').value;
+			console.log("streetName: ", streetName);
+
+			var cityName = document.getElementById('city').value;
+			console.log("cityName: ", cityName);
+
+			var stateName = document.getElementById('state').value;
+			console.log("stateName: ", stateName);
+
+			var zipName = document.getElementById('zip').value;
+			console.log("zipName: ", zipName);
+
+			var zipFour = document.getElementById('zip-plus-four').value;
+			console.log("Zip + Four: ", zipFour);
+
+			var phoneNumber = document.getElementById('phone').value;
+			console.log("phoneNumber: ", phoneNumber);
+
+			var partyName = document.getElementById('party').value;
+			console.log("partyName: ", partyName);
+		}
+
+
+	</script>
+
+</head>
+
+
+<body>
+
+	<div class="input-group">
+		<div class="input-label">
+			First Name:
+		</div>
+		<input id="first-name" placeholder="First Name">
+	</div>
+
+	<div class="input-group">
+		<div class="input-label">
+			Middle Name:
+		</div>
+		<input id="middle-name" placeholder="Middle Name">
+	</div>
+	
+	<div class="input-group">
+		<div class="input-label">
+			Last Name:
+		</div>
+		<input id="last-name" placeholder="Last Name">
+	</div>
+	
+	<div class="input-group">
+		<div class="input-label">
+			Street Number:
+		</div>
+		<input id="street-number" placeholder="Street Number">
+	</div>
+	
+	<div class="input-group">
+		<div class="input-label">
+			Street Name:
+		</div>
+		<input id="street-name" placeholder="Street Name">
+	</div>
+	
+	<div class="input-group">
+		<div class="input-label">
+			City:
+		</div>
+		<input id="city" placeholder="City">
+	</div>
+	
+	<div class="input-group">
+		<div class="input-label">
+			State:
+		</div>
+		<input id="state" placeholder="State">
+	</div>
+	
+	<div class="input-group">
+		<div class="input-label">
+			Zip Code:
+		</div>
+		<input id="zip" placeholder="#####">
+	</div>
+		
+	<div class="input-group">
+		<div class="input-label">
+			Zip Code(+ Four):
+		</div>
+		<input id="zip-plus-four" placeholder="####">
+	</div>
+	
+	<div class="input-group">
+		<div class="input-label">
+			Phone:
+		</div>
+		<input id="phone" placeholder="Phone">
+	</div>
+
+	<div class="input-group">
+		<div class="input-label">
+			Party:
+		</div>
+		<input id="party" placeholder="Party">
+	</div>
+
+	<input 	class="input-group" 
+			id="submit-create-contact" 
+			type="button" 
+			value="Create Contact"
+			onclick="createContact()">
+	
+</body>
+
+</html>
