@@ -15,48 +15,6 @@
 			background-color: #EEEE44;
 		}
 	</style>
-// REMOVE THIS ========
-	<script>
-
-
-
-		function createContact() {
-			var firstName = document.getElementById('first-name').value;
-			console.log("firstName: ", firstName); // REMOVE THIS ========
-		
-			var middleName = document.getElementById('middle-name').value;
-			console.log("middleName: ", middleName);
-
-			var lastName = document.getElementById('last-name').value;
-			console.log("lastName: ", lastName);
-
-			var streetNumber = document.getElementById('street-number').value;
-			console.log("streetNumber: ", streetNumber);
-
-			var streetName = document.getElementById('street-name').value;
-			console.log("streetName: ", streetName);
-
-			var cityName = document.getElementById('city').value;
-			console.log("cityName: ", cityName);
-
-			var stateName = document.getElementById('state').value;
-			console.log("stateName: ", stateName);
-
-			var zipName = document.getElementById('zip').value;
-			console.log("zipName: ", zipName);
-
-			var zipFour = document.getElementById('zip-plus-four').value;
-			console.log("Zip + Four: ", zipFour);
-
-			var phoneNumber = document.getElementById('phone').value;
-			console.log("phoneNumber: ", phoneNumber);
-
-			var partyName = document.getElementById('party').value;
-			console.log("partyName: ", partyName);
-		}
-
-
-	</script>
 
 </head>
 
@@ -145,6 +103,60 @@
 			type="button" 
 			value="Create Contact"
 			onclick="createContact()">
+
+
+	<script>
+
+		// so first off, it looks like the stuff I did the other day at your desk was not committed and pushed up, 
+		// but that's acutally kinda cool, because now you can do the stuff that I did that day... and you don't have to 
+		// do it exactly the same way.
+
+		function createContact() {
+			var firstName = document.getElementById('first-name').value;
+			console.log("firstName: ", firstName); // REMOVE THIS ========
+		
+			var middleName = document.getElementById('middle-name').value;
+			console.log("middleName: ", middleName);
+
+			var lastName = document.getElementById('last-name').value;
+			console.log("lastName: ", lastName);
+
+			var streetNumber = document.getElementById('street-number').value;
+			console.log("streetNumber: ", streetNumber);
+
+			var streetName = document.getElementById('street-name').value;
+			console.log("streetName: ", streetName);
+
+			var cityName = document.getElementById('city').value;
+			console.log("cityName: ", cityName);
+
+			var stateName = document.getElementById('state').value;
+			console.log("stateName: ", stateName);
+
+			var zipName = document.getElementById('zip').value;
+			console.log("zipName: ", zipName);
+
+			var zipFour = document.getElementById('zip-plus-four').value;
+			console.log("Zip + Four: ", zipFour);
+
+			var phoneNumber = document.getElementById('phone').value;
+			console.log("phoneNumber: ", phoneNumber);
+
+			var partyName = document.getElementById('party').value;
+			console.log("partyName: ", partyName);
+
+			// Right here, inside this createContact function put all of these variables together into an object.
+			// And then push the object into an array.
+			// Be sure to create the array outside of this funciton so that we can access it outside of the scope of this
+			// function.
+		}
+
+		// Then create a button on your page (in the html markup section above) that when clicked, displays a list
+		// of all of the contacts.  It doesn't have to display all of the info of each contact, maybe just 
+		// first and last name, phone number, and city, but up to you.
+
+
+	</script>
 	
 </body>
 
