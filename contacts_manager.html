@@ -5,64 +5,39 @@
 	<title>
 		Contact Manager
 	</title>
-
 	<style>
 		.input-group {
-			margin-top: 7px;
-			margin-left: 7px;
+			width:100%; 
+			margin-left: 5px;
+			overflow: auto;
+
+		}
+		#header {
+			width:500px;
+
+
 		}
 		#submit-create-contact {
 			background-color: #EEEE44;
+			clear: both;
+		}
+		#menu {
+			float: left;
+			clear: both;
+		}
+		#content {
+			float: left;
+			clear: both;
+		}
+		#footer {
+		clear: both;
 		}
 	</style>
-// REMOVE THIS ========
-	<script>
-
-
-
-		function createContact() {
-			var firstName = document.getElementById('first-name').value;
-			console.log("firstName: ", firstName); // REMOVE THIS ========
-		
-			var middleName = document.getElementById('middle-name').value;
-			console.log("middleName: ", middleName);
-
-			var lastName = document.getElementById('last-name').value;
-			console.log("lastName: ", lastName);
-
-			var streetNumber = document.getElementById('street-number').value;
-			console.log("streetNumber: ", streetNumber);
-
-			var streetName = document.getElementById('street-name').value;
-			console.log("streetName: ", streetName);
-
-			var cityName = document.getElementById('city').value;
-			console.log("cityName: ", cityName);
-
-			var stateName = document.getElementById('state').value;
-			console.log("stateName: ", stateName);
-
-			var zipName = document.getElementById('zip').value;
-			console.log("zipName: ", zipName);
-
-			var zipFour = document.getElementById('zip-plus-four').value;
-			console.log("Zip + Four: ", zipFour);
-
-			var phoneNumber = document.getElementById('phone').value;
-			console.log("phoneNumber: ", phoneNumber);
-
-			var partyName = document.getElementById('party').value;
-			console.log("partyName: ", partyName);
-		}
-
-
-	</script>
-
 </head>
 
 
 <body>
-
+<div id="header">
 	<div class="input-group">
 		<div class="input-label">
 			First Name:
@@ -76,14 +51,14 @@
 		</div>
 		<input id="middle-name" placeholder="Middle Name">
 	</div>
-	
+
 	<div class="input-group">
 		<div class="input-label">
 			Last Name:
 		</div>
 		<input id="last-name" placeholder="Last Name">
 	</div>
-	
+
 	<div class="input-group">
 		<div class="input-label">
 			Street Number:
@@ -145,7 +120,124 @@
 			type="button" 
 			value="Create Contact"
 			onclick="createContact()">
+
+	<input 	type="button"
+			value="Show Contacts"
+			id="show-contacts-button"
+			onclick="showContacts()">
+
+	<div id="show-contacts-div">
+		Nothing to show here yet...
+	</div>
+</div>
+
+<div id="menu">Menu links goes in here</div>
+<div id="content">And finally the page content in here</div>
+	<script>
+		var arrayOfContacts = [];
+		console.log(arrayOfContacts);
+
+		function createContact() {
+			
+
+			var firstName = document.getElementById('first-name').value;
+			console.log("firstName: ", firstName); // REMOVE THIS ========
+		
+			var middleName = document.getElementById('middle-name').value;
+			console.log("middleName: ", middleName);
+
+			var lastName = document.getElementById('last-name').value;
+			console.log("lastName: ", lastName);
+
+			var streetNumber = document.getElementById('street-number').value;
+			console.log("streetNumber: ", streetNumber);
+			console.log(typeof streetNumber);
+
+			var streetName = document.getElementById('street-name').value;
+			console.log("streetName: ", streetName);
+
+			var cityName = document.getElementById('city').value;
+			console.log("cityName: ", cityName);
+
+			var stateName = document.getElementById('state').value;
+			console.log("stateName: ", stateName);
+
+			var zipName = document.getElementById('zip').value;
+			console.log("zipName: ", zipName);
+
+			var zipFour = document.getElementById('zip-plus-four').value;
+			console.log("Zip + Four: ", zipFour);
+
+			var phoneNumber = document.getElementById('phone').value;
+			console.log("phoneNumber: ", phoneNumber);
+
+			var partyName = document.getElementById('party').value;
+			console.log("partyName: ", partyName);
+
+			var newContact = {
+				firstName : firstName,
+				middleName: middleName,
+				lastName : lastName,
+				streetNumber : streetNumber,
+				streetName : streetName,
+				cityName : cityName,
+				stateName : stateName,
+				zipName : zipName,
+				zipFour : zipFour,
+				phoneNumber : phoneNumber,
+				partyName : partyName,
+			};
+
+			arrayOfContacts.push(newContact);
+			
+			// for (var i = 0; i < arrayOfContacts.length; i++) {
+			// 	console.log("arrayOfContacts[i]: ", arrayOfContacts[i]);
+			// }
+			// console.log("arrayOfContacts: ", arrayOfContacts);
+		}
+
+		function showContacts () {
+			var ourMarkup = "";
+			for (var i = 0; i < arrayOfContacts.length; i++ ) {
+				ourMarkup += "<p> first name: " + arrayOfContacts[i].firstName + "</p>";
+				ourMarkup += "</p> middle name: " + arrayOfContacts[i].middleName + "</p>"
+				ourMarkup += "<p> last name: " + arrayOfContacts[i].lastName + "</p>"
+				ourMarkup += "<p> street number: " + arrayOfContacts[i].streetNumber + "</p>"
+				ourMarkup += "<p> street name: " + arrayOfContacts[i].streetName + "</p>"
+				ourMarkup += "<p> city name: " + arrayOfContacts[i].cityName + "</p>"
+				ourMarkup += "<p> state name: " + arrayOfContacts[i].stateName + "</p>";
+				ourMarkup += "<p> zip name: " + arrayOfContacts[i].zipName + "</p>"
+				ourMarkup += "<p> Zip + Four: " + arrayOfContacts[i].zipFour + "</p>"
+				ourMarkup += "<p> phone number: " + arrayOfContacts[i].phoneNumber + "</p>"
+				ourMarkup += "<p> party name: " + arrayOfContacts[i].partyName + "</p>"
+			}
+			document.getElementById("show-contacts-div").innerHTML = ourMarkup;
+
+		}
+		//logSomeStuff(1, 2);
+    	function logSomeStuff (num1, num2) {
+    		console.log("some");
+    		console.log("stuff");
+    		var answer = (num1 + num2) / 3;
+    		console.log (answer);
+    	}
+    	//logSomeStuff(3, 4);
+    	//secondFunction();
+    	var secondFunction = function() {
+    		console.log("after");
+    		logSomeStuff();
+    	};
+    	secondFunction();
+
+		var arrayOfNumbers = ["zero","one","two","3three","4","five","6","7","8","nine","ten"];
+			for (var stepThroughArrayOfNumbers = 0; stepThroughArrayOfNumbers < 10; stepThroughArrayOfNumbers++){
+				console.log ("stepThroughArrayOfNumbers values are: ", stepThroughArrayOfNumbers);
+				console.log (arrayOfNumbers[stepThroughArrayOfNumbers]);
+			};
+
+	</script>
 	
 </body>
 
 </html>
+// edited new master
