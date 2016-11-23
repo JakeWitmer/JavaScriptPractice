@@ -13,24 +13,26 @@
 
 		}
 		#header {
-			width:500px;
-
-
+			width: 500px;
+			display: inline-block;
 		}
 		#submit-create-contact {
 			background-color: #EEEE44;
-			clear: both;
 		}
 		#menu {
-			float: left;
-			clear: both;
+
 		}
 		#content {
-			float: left;
-			clear: both;
+
 		}
 		#footer {
-		clear: both;
+
+		}
+		#message-to-jake {
+			width: 400px;
+			display: inline-block;
+			vertical-align: top;
+			padding-top: 100px;
 		}
 	</style>
 </head>
@@ -125,20 +127,24 @@
 			value="Show Contacts"
 			id="show-contacts-button"
 			onclick="showContacts()">
+	
 
 	<div id="show-contacts-div">
 		Nothing to show here yet...
 	</div>
 </div>
+<div id="message-to-jake">
+	HYO Bro!  I got your latest push to master and I think you'll be able to pull this down too.  We gotta get together and code in person again ASAP!  I wanted to today but I guess you're sick.  Rest up and drink TONS of water!!!
+</div>
 
 <div id="menu">Menu links goes in here</div>
 <div id="content">And finally the page content in here</div>
+
 	<script>
 		var arrayOfContacts = [];
-		console.log(arrayOfContacts);
+		console.log("arrayOfContacts at the beginning of page load: ", arrayOfContacts);
 
 		function createContact() {
-			
 
 			var firstName = document.getElementById('first-name').value;
 			console.log("firstName: ", firstName); // REMOVE THIS ========
@@ -189,11 +195,6 @@
 			};
 
 			arrayOfContacts.push(newContact);
-			
-			// for (var i = 0; i < arrayOfContacts.length; i++) {
-			// 	console.log("arrayOfContacts[i]: ", arrayOfContacts[i]);
-			// }
-			// console.log("arrayOfContacts: ", arrayOfContacts);
 		}
 
 		function showContacts () {
@@ -212,8 +213,8 @@
 				ourMarkup += "<p> party name: " + arrayOfContacts[i].partyName + "</p>"
 			}
 			document.getElementById("show-contacts-div").innerHTML = ourMarkup;
-
 		}
+
 		//logSomeStuff(1, 2);
     	function logSomeStuff (num1, num2) {
     		console.log("some");
@@ -240,4 +241,3 @@
 </body>
 
 </html>
-// edited new master
