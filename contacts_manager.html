@@ -63,7 +63,7 @@
 		<div class="input-label">
 			Street Number:
 		</div>
-		<input id="street-number" placeholder="Street Number">
+		<input id="street-number" type="number" numberObject.placeholder="Street Number">
 	</div>
 	
 	<div class="input-group">
@@ -113,6 +113,13 @@
 			Party:
 		</div>
 		<input id="party" placeholder="Party">
+	</div>
+
+	<div class="input-group">
+		<div class="input-label">
+			Economic Freedom Score:
+		</div>
+		<input id="econFreedom" placeholder="Economic Freedom Value">
 	</div>
 
 	<input 	class="input-group" 
@@ -174,6 +181,10 @@
 			var partyName = document.getElementById('party').value;
 			console.log("partyName: ", partyName);
 
+			var econFreedomValue = document.getElementById('econFreedom').value;
+			console.log("econFreedomValue: ", econFreedomValue);
+			console.log(typeof streetNumber);
+
 			var newContact = {
 				firstName : firstName,
 				middleName: middleName,
@@ -186,14 +197,19 @@
 				zipFour : zipFour,
 				phoneNumber : phoneNumber,
 				partyName : partyName,
+				econFreedomValue : econFreedomValue,
 			};
-
+			var reallyNewContact = {
+				econFreedomValue : econFreedomValue + 9,
+				firstName : firstName,
+			};
 			arrayOfContacts.push(newContact);
+
 			
-			// for (var i = 0; i < arrayOfContacts.length; i++) {
-			// 	console.log("arrayOfContacts[i]: ", arrayOfContacts[i]);
-			// }
-			// console.log("arrayOfContacts: ", arrayOfContacts);
+			for (var i = 0; i < arrayOfContacts.length; i++) {
+			console.log("arrayOfContacts[i]: ", arrayOfContacts[i]);
+			}
+			console.log("arrayOfContacts: ", arrayOfContacts);
 		}
 
 		function showContacts () {
