@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		#display-div {
+			width: 100%;
+			height: 200px;
+			padding-left: 600px;
+			padding-top: 200px;
+		}
+		#display-span {
+			margin-left: 600px;
+		}
+
+	</style>
+</head>
+<body>
+
+<div id="display-div">
+
+</div>
+<span id="display-span">
+</span>
+
+
+<script>
+
+	document.getElementById("display-div").innerHTML = "HEY THERE!";
+
+	var shortenedVersion = document.getElementById("display-span");
+
+	shortenedVersion.innerHTML = "Putting this text in the span";
+
+	
+
+</script>
+</body>
+
+</html>
