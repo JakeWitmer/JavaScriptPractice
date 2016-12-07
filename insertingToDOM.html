@@ -5,8 +5,9 @@
 		#display-div {
 			width: 100%;
 			height: 200px;
-			padding-left: 600px;
+			padding-left: 10px;
 			padding-top: 200px;
+			text-align: left;
 		}
 		#display-span {
 			margin-left: 600px;
@@ -16,16 +17,17 @@
 </head>
 <body>
 
-<div id="display-div">
+<div id="display-div" style="text-align:left">
 
 </div>
+
 <span id="display-span">
 </span>
 
 
 <script>
-
-	document.getElementById("display-div").innerHTML = "HEY THERE!";
+	var myName = "uncle Jake";
+	document.getElementById("display-div").innerHTML = "<h1> <p style='color:red'>'HEY THERE,", myName,"WTF</p></h1>";
 
 	var shortenedVersion = document.getElementById("display-span");
 

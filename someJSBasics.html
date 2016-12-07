@@ -5,8 +5,9 @@
 		#display-div {
 			width: 100%;
 			height: 200px;
-			padding-left: 600px;
-			padding-top: 200px;
+			padding-left: 10px;
+			padding-top: 20px;
+			text-align:left;
 		}
 		#display-div {
 			margin-top: 100px;
@@ -16,16 +17,23 @@
 </head>
 <body>
 
+<input 	id="our-one-input"
+		placeholder="Name">
+<input 	type="button" 
+		value="GO"
+		onclick="createName()">
 
-
-<input id="our-one-input">
-
-<input type="button" value="GO">
 <input type="button" value="If Jake">
-
 <div id="display-div">
 </div>
 
+<input 	type="button"
+		value="Show Contacts"
+		id="show-contacts-button"
+		onclick="showContacts()">
+<div id="show-contacts-div">
+		Nothing to show here yet...
+</div>
 
 <script>
 	// 1st challenge:
@@ -34,17 +42,36 @@
 	// id  "display-div".  Make sure the sentence is formatted exactly as above including the comma and spaces but display
 	// without the quotes. Put your code here: 
 
+	function createName () {
+	var myNameVar = document.getElementById("our-one-input").value;
+	//document.getElementById("our-one-input")
+	document.getElementById("display-div").innerHTML = "<h1><p style='color:blue'>Hey there " + myNameVar + ", how are you today?</p></h1>";
 
-
-
-
-
+		if (myNameVar === "Jake") {
+		console.log(document.getElementById("display-div"));
+		document.getElementById("display-div").innerHTML = "<h1><p style='color:blue'>This is Jake</p></h1>";
+		console.log(document.getElementById("display-div"));
+		console.log(document.getElementById);
+		}
+		else
+			{
+				document.getElementById("display-div").innerHTML = "<h1><p style='color:red'>Not Jake</p></h1>";
+			//console.log(document.getElementById("display-div").value);
+			}
+	//var shortenedVersion = document.getElementById("display-span");
+	//shortenedVersion.innerHTML = "Putting this text in the span";
+	}
+	
 
 	// 2nd challenge:
 	// write a function that is fired when button "if Jake" is clicked.  Make the function take the name that is 
 	// entered into the input and if the name is "Jake" then insert the sentence "This is JAKE" into the display div.
 	// If anything other than "Jake" is entered into the input, make the display div read "Not Jake". Put your code here:
-
+/*	function checkMyName () {
+	var myNameVar = document.getElementById("our-one-input").value;
+	//document.getElementById("our-one-input")
+	document.getElementById("display-div").innerHTML = "<h1><p style='color:red'>Hey there " + myNameVar + ", how are you today?</p></h1>";
+	}*/
 	
 
 </script>
