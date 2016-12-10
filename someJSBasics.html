@@ -42,22 +42,26 @@
 	// id  "display-div".  Make sure the sentence is formatted exactly as above including the comma and spaces but display
 	// without the quotes. Put your code here: 
 
+
+	// you'll see that I changed each document.getElementById("display-div").innerHTML to be followed by a "+="  
+	// instead of just an "=".  This adds on to whatever content was there already, if that's what you're going for.
 	function createName () {
-	var myNameVar = document.getElementById("our-one-input").value;
-	//document.getElementById("our-one-input")
-	document.getElementById("display-div").innerHTML = "<h1><p style='color:blue'>Hey there " + myNameVar + ", how are you today?</p></h1>";
+		// **** we've entered a code block so everything should be indented one tab from the "function" keyword in the line above
+		var myNameVar = document.getElementById("our-one-input").value;
+		//document.getElementById("our-one-input")
+		document.getElementById("display-div").innerHTML += "<h1><p style='color:blue'>Hey there " + myNameVar + ", how are you today?</p></h1>";
 
 		if (myNameVar === "Jake") {
-		console.log(document.getElementById("display-div"));
-		document.getElementById("display-div").innerHTML = "<h1><p style='color:blue'>This is Jake</p></h1>";
-		console.log(document.getElementById("display-div"));
-		console.log(document.getElementById);
-		}
-		else
-			{
-				document.getElementById("display-div").innerHTML = "<h1><p style='color:red'>Not Jake</p></h1>";
+			// **** we've enterd another code blcok so we should indent one tab from the keyword "if" in the line above
+			console.log(document.getElementById("display-div"));
+			document.getElementById("display-div").innerHTML += "<h1><p style='color:blue'>This is Jake</p></h1>";
+			console.log(document.getElementById("display-div"));
+			console.log(document.getElementById);
+		} else {
+			// **** notice how I put the closing curly brace, else, and opening curly brace on the same line above
+			document.getElementById("display-div").innerHTML += "<h1><p style='color:red'>Not Jake</p></h1>";
 			//console.log(document.getElementById("display-div").value);
-			}
+		} // **** notice how this curly brace is directly below the one above it
 	//var shortenedVersion = document.getElementById("display-span");
 	//shortenedVersion.innerHTML = "Putting this text in the span";
 	}
